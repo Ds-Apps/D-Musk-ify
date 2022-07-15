@@ -1,0 +1,33 @@
+{
+  "name": "D-Musk-ify",
+  "description": "Tired of Elon Musk news? Me too, let's opt out.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": {
+      "16": "/images/dmuskify-16.jpg",
+      "32": "/images/dmuskify-32.jpg",
+      "48": "/images/dmuskify-48.jpg",
+      "128": "/images/dmuskify-128.jpg"
+    }
+  },
+  "icons": {
+    "16": "/images/dmuskify-16.jpg",
+    "32": "/images/dmuskify-32.jpg",
+    "48": "/images/dmuskify-48.jpg",
+    "128": "/images/dmuskify-128.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.reddit.com/*"],
+      "js": ["content-scripts/main.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://*.reddit.com/*"],
+      "resources": ["content-scripts/reddit.js"]
+    }
+  ],
+  "host_permissions": ["https://*.reddit.com/*"]
+}
